@@ -13,7 +13,8 @@ This project introduces an AI-powered sales assistant chatbot that automates the
 The chatbot connects to Salesforce, analyzes account data, and responds to user queries through WhatsApp.
 
 ## Features
-<!-- 1. Account History Summarization -->
+
+## 1. Account History Summarization
 
 Automatically reads account information from Salesforce and generates a concise summary including:
 
@@ -28,7 +29,7 @@ Business interests
 Example command:
 
 summary ABC Corp
-<!-- 2. Opportunity Analysis -->
+## 2. Opportunity Analysis
 
 The system analyzes opportunity data such as:
 
@@ -52,7 +53,7 @@ Risk factors
 
 Recommended sales strategy
 
-<!-- 3. Next Best Action Recommendation -->
+## 3. Next Best Action Recommendation
 
 Based on CRM insights, the AI suggests actions like:
 
@@ -64,7 +65,7 @@ Providing product demo
 
 Following up with the client
 
-<!-- 4. Personalized Email Generation -->
+## 4. Personalized Email Generation
 
 The chatbot automatically generates professional emails based on CRM context.
 
@@ -79,7 +80,7 @@ Subject: Follow-up on AI Solutions Discussion
 Dear ABC Corp Team,
 
 Thank you for attending our recent product demonstration...
-<!-- 5. Automated Proposal Generation -->
+## 5. Automated Proposal Generation -->
 
 The system generates a customized proposal including:
 
@@ -109,7 +110,7 @@ Groq AI Model
       ↓
 Response sent back to WhatsApp
 
-Technologies Used
+## Technologies Used
 Technology	        Purpose
 Python	            Backend development
 Flask	            Web server
