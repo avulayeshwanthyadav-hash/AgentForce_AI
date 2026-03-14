@@ -1,0 +1,5 @@
+simple-salesforce 
+fastapi 
+uvicorn 
+python-dotenv 
+groq
