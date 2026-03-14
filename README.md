@@ -121,18 +121,6 @@ Simple-Salesforce	Salesforce API integration
 Ngrok	            Public webhook for local server
 
 
-## Project Structure
-sales_ai_whatsapp_bot
-│
-├── app.py
-├── chatbot.py
-├── ai_tools.py
-├── salesforce_api.py
-├── .env
-├── requirements.txt
-└── README.md
-
-
 ## Running the Application
 
 Start the server:
