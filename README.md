@@ -111,14 +111,13 @@ Groq AI Model
 Response sent back to WhatsApp
 
 ## Technologies Used
-Technology	        Purpose
-Python	            Backend development
-Flask	            Web server
-Salesforce CRM	    Customer and opportunity data
-Twilio	            WhatsApp messaging integration
-Groq API	        AI text generation
-Simple-Salesforce	Salesforce API integration
-Ngrok	            Public webhook for local server
+->Python	            Backend development
+->Flask	            Web server
+->Salesforce CRM	      Customer and opportunity data
+->Twilio	            WhatsApp messaging integration
+->Groq API	            AI text generation
+->Simple-Salesforce	Salesforce API integration
+->Ngrok	            Public webhook for local server
 
 
 ## Running the Application
