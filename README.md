@@ -1,133 +1,193 @@
-## Agentforce-Based Intelligent Sales Assistant & Proposal Automation
+# Agentforce-Based Intelligent Sales Assistant & Proposal Automation
 
-An AI-powered WhatsApp chatbot that integrates with Salesforce to automate sales workflows such as account summarization, opportunity analysis, personalized email generation, and proposal creation.
+An AI-powered WhatsApp chatbot that integrates with Salesforce to automate sales workflows such as **account summarization, opportunity analysis, personalized email generation, and proposal creation**.
 
-The system uses AI models from Groq and messaging services from Twilio to provide real-time responses directly on WhatsApp.
+The system uses AI models from **Groq** and messaging services from **Twilio** to provide real-time responses directly on WhatsApp.
 
-## Project Overview
+---
 
-Sales representatives often spend significant time manually searching through CRM records, analyzing opportunities, writing follow-up emails, and preparing proposals.
+# Project Overview
 
-This project introduces an AI-powered sales assistant chatbot that automates these tasks using CRM data.
+Sales representatives often spend significant time manually:
 
-The chatbot connects to Salesforce, analyzes account data, and responds to user queries through WhatsApp.
+- Searching CRM records
+- Analyzing opportunities
+- Writing follow-up emails
+- Preparing sales proposals
 
-## Features
+This project introduces an **AI-powered sales assistant chatbot** that automates these tasks using CRM data.
+
+The chatbot connects to Salesforce, analyzes account data, and responds to user queries through **WhatsApp**.
+
+---
+
+# Features
 
 ## 1. Account History Summarization
 
 Automatically reads account information from Salesforce and generates a concise summary including:
 
-Customer profile
+- Customer profile
+- Industry
+- Relationship description
+- Business interests
 
-Industry
+### Example Command
 
-Relationship description
-
-Business interests
-
-Example command:
 
 summary ABC Corp
+
+
+---
+
 ## 2. Opportunity Analysis
 
 The system analyzes opportunity data such as:
 
-Deal stage
+- Deal stage
+- Deal value
+- Customer engagement
+- Potential risks
 
-Deal value
+### Example Command
 
-Customer engagement
-
-Potential risks
-
-Example command:
 
 opportunity ABC Corp
 
+
 The AI provides:
 
-Win probability
+- Win probability
+- Risk factors
+- Recommended sales strategy
 
-Risk factors
-
-Recommended sales strategy
+---
 
 ## 3. Next Best Action Recommendation
 
-Based on CRM insights, the AI suggests actions like:
+Based on CRM insights, the AI suggests actions such as:
 
-Scheduling a meeting
+- Scheduling a meeting
+- Sending pricing details
+- Providing a product demo
+- Following up with the client
 
-Sending pricing details
-
-Providing product demo
-
-Following up with the client
+---
 
 ## 4. Personalized Email Generation
 
-The chatbot automatically generates professional emails based on CRM context.
+The chatbot automatically generates professional sales emails based on CRM context.
 
-Example:
+### Example Command
+
 
 email ABC Corp
 
-Output example:
+
+### Example Output
+
 
 Subject: Follow-up on AI Solutions Discussion
 
 Dear ABC Corp Team,
 
-Thank you for attending our recent product demonstration...
-## 5. Automated Proposal Generation -->
+Thank you for attending our recent product demonstration.
+We believe our AI-powered solutions can significantly enhance
+your operational efficiency. Please let us know a convenient
+time for a follow-up discussion.
+
+
+---
+
+## 5. Automated Proposal Generation
 
 The system generates a customized proposal including:
 
-Customer overview
+- Customer overview
+- Problem statement
+- Proposed solution
+- Pricing details
+- Implementation timeline
 
-Problem statement
+### Example Command
 
-Proposed solution
-
-Pricing details
-
-Implementation timeline
-
-## Example command:
 
 proposal ABC Corp
-System Architecture
+
+
+---
+
+# System Architecture
+
+
 User (WhatsApp)
-      ↓
+↓
 Twilio WhatsApp API
-      ↓
+↓
 Python Backend (Flask)
-      ↓
+↓
 Salesforce CRM
-      ↓
+↓
 Groq AI Model
-      ↓
+↓
 Response sent back to WhatsApp
 
-## Technologies Used
-->Python	            Backend development
-->Flask	            Web server
-->Salesforce CRM	      Customer and opportunity data
-->Twilio	            WhatsApp messaging integration
-->Groq API	            AI text generation
-->Simple-Salesforce	Salesforce API integration
-->Ngrok	            Public webhook for local server
 
+---
 
-## Running the Application
+# Technologies Used
 
-Start the server:
+| Technology | Purpose |
+|-----------|--------|
+| Python | Backend development |
+| Flask | Web server |
+| Salesforce CRM | Customer and opportunity data |
+| Twilio | WhatsApp messaging integration |
+| Groq API | AI text generation |
+| Simple-Salesforce | Salesforce API integration |
+| Ngrok | Public webhook for local server |
+
+---
+
+# Running the Application
+
+## 1. Start the Server
+
 
 python app.py
 
-Expose the server using ngrok:
+
+## 2. Expose the Server Using Ngrok
+
 
 ngrok http 5000
 
-Use the generated URL as the Twilio webhook.
+
+## 3. Configure Twilio Webhook
+
+Use the generated ngrok URL as the Twilio webhook.
+
+Example:
+
+
+https://your-ngrok-url/whatsapp
+
+
+---
+
+# Example WhatsApp Commands
+
+
+summary ABC Corp
+opportunity ABC Corp
+email ABC Corp
+proposal ABC Corp
+
+
+---
+
+# Conclusion
+
+This project demonstrates how **AI + CRM + messaging platforms** can be combined to build an **intelligent sales assistant** that improves productivity and automates repetitive sales tasks.
+
+The chatbot acts as a **virtual sales assistant**, enabling real-time CRM insights and automated customer communication directly through WhatsApp.
