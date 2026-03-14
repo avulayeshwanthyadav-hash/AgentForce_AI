@@ -1,364 +1,145 @@
-# Agentforce-Based Intelligent Sales Assistant & Proposal Automation
+## Agentforce-Based Intelligent Sales Assistant & Proposal Automation
 
-An AI-powered sales chatbot that integrates with Salesforce CRM to automate sales intelligence tasks such as account summarization, opportunity analysis, email generation, and proposal creation.
-This project simulates an AI assistant similar to Agentforce by connecting to Salesforce CRM data and using a Large Language Model to generate insights and sales documents.
+An AI-powered WhatsApp chatbot that integrates with Salesforce to automate sales workflows such as account summarization, opportunity analysis, personalized email generation, and proposal creation.
 
----
+The system uses AI models from Groq and messaging services from Twilio to provide real-time responses directly on WhatsApp.
+
+## Project Overview
+
+Sales representatives often spend significant time manually searching through CRM records, analyzing opportunities, writing follow-up emails, and preparing proposals.
+
+This project introduces an AI-powered sales assistant chatbot that automates these tasks using CRM data.
+
+The chatbot connects to Salesforce, analyzes account data, and responds to user queries through WhatsApp.
 
 ## Features
+<!-- 1. Account History Summarization -->
 
-- Account History Summarization  
-- Opportunity Analysis and Deal Insights  
-- Next Best Action Recommendation  
-- Automated Sales Email Generation  
-- Automated Sales Proposal Generation  
-- Chatbot Interface for interacting with CRM data
+Automatically reads account information from Salesforce and generates a concise summary including:
 
----
+Customer profile
 
-## Technologies Used
+Industry
 
-- Python
-- FastAPI
-- Groq API (Llama 3 model)
-- Salesforce REST API
-- simple-salesforce Python library
-- dotenv for environment variables
+Relationship description
 
-CRM platform used: Salesforce
+Business interests
 
----
+Example command:
 
-## System Architecture
+summary ABC Corp
+<!-- 2. Opportunity Analysis -->
 
-User  
-↓  
-Chatbot Interface  
-↓  
-Python Backend  
-↓  
-Salesforce CRM API  
-↓  
-AI Model (Groq Llama)
+The system analyzes opportunity data such as:
 
----
+Deal stage
+
+Deal value
+
+Customer engagement
+
+Potential risks
+
+Example command:
+
+opportunity ABC Corp
+
+The AI provides:
+
+Win probability
+
+Risk factors
+
+Recommended sales strategy
+
+<!-- 3. Next Best Action Recommendation -->
+
+Based on CRM insights, the AI suggests actions like:
+
+Scheduling a meeting
+
+Sending pricing details
+
+Providing product demo
+
+Following up with the client
+
+<!-- 4. Personalized Email Generation -->
+
+The chatbot automatically generates professional emails based on CRM context.
+
+Example:
+
+email ABC Corp
+
+Output example:
+
+Subject: Follow-up on AI Solutions Discussion
+
+Dear ABC Corp Team,
+
+Thank you for attending our recent product demonstration...
+<!-- 5. Automated Proposal Generation -->
+
+The system generates a customized proposal including:
+
+Customer overview
+
+Problem statement
+
+Proposed solution
+
+Pricing details
+
+Implementation timeline
+
+## Example command:
+
+proposal ABC Corp
+System Architecture
+User (WhatsApp)
+      ↓
+Twilio WhatsApp API
+      ↓
+Python Backend (Flask)
+      ↓
+Salesforce CRM
+      ↓
+Groq AI Model
+      ↓
+Response sent back to WhatsApp
+
+Technologies Used
+Technology	        Purpose
+Python	            Backend development
+Flask	            Web server
+Salesforce CRM	    Customer and opportunity data
+Twilio	            WhatsApp messaging integration
+Groq API	        AI text generation
+Simple-Salesforce	Salesforce API integration
+Ngrok	            Public webhook for local server
+
 
 ## Project Structure
-
-
-sales_ai_chatbot
+sales_ai_whatsapp_bot
 │
 ├── app.py
 ├── chatbot.py
 ├── ai_tools.py
 ├── salesforce_api.py
 ├── .env
+├── requirements.txt
 └── README.md
 
 
----
+## Running the Application
 
-## Setup Instructions
+Start the server:
 
-### 1. Clone the repository
-# Agentforce-Based Intelligent Sales Assistant & Proposal Automation
+python app.py
 
-An AI-powered sales chatbot that integrates with Salesforce CRM to automate sales intelligence tasks such as account summarization, opportunity analysis, email generation, and proposal creation.
+Expose the server using ngrok:
 
-This project simulates an AI assistant similar to Agentforce by connecting to Salesforce CRM data and using a Large Language Model to generate insights and sales documents.
+ngrok http 5000
 
----
-
-## Features
-
-- Account History Summarization  
-- Opportunity Analysis and Deal Insights  
-- Next Best Action Recommendation  
-- Automated Sales Email Generation  
-- Automated Sales Proposal Generation  
-- Chatbot Interface for interacting with CRM data
-
----
-
-## Technologies Used
-
-- Python
-- FastAPI
-- Groq API (Llama 3 model)
-- Salesforce REST API
-- simple-salesforce Python library
-- dotenv for environment variables
-
-CRM platform used: Salesforce
-
----
-
-## System Architecture
-
-User  
-↓  
-Chatbot Interface  
-↓  
-Python Backend  
-↓  
-Salesforce CRM API  
-↓  
-AI Model (Groq Llama)
-
----
-
-## Project Structure
-
-
-sales_ai_chatbot
-│
-├── app.py
-├── chatbot.py
-├── ai_tools.py
-├── salesforce_api.py
-├── .env
-└── README.md
-
-
----
-
-## Setup Instructions
-
-### 1. Clone the repository
-
-
-git clone https://github.com/yourusername/sales-ai-chatbot.git
-
-cd sales-ai-chatbot
-
-
----
-
-### 2. Install dependencies
-
-
-pip install simple-salesforce fastapi uvicorn python-dotenv groq
-
-
----
-
-### 3. Create Salesforce Developer Account
-
-Go to:
-
-https://developer.salesforce.com/signup
-
-After signup, note the following credentials:
-
-- Username
-- Password
-- Security Token
-
-To get the token:
-
-Settings → Reset My Security Token
-
----
-
-### 4. Get Groq API Key
-
-Visit:
-
-https://console.groq.com
-
-Create an API key.
-
----
-
-### 5. Configure Environment Variables
-
-Create `.env` file:
-
-
-SF_USERNAME=your_salesforce_username
-SF_PASSWORD=your_salesforce_password
-SF_TOKEN=your_salesforce_token
-
-GROQ_API_KEY=your_groq_api_key
-
-
----
-
-## Running the Chatbot
-
-Start the FastAPI server:
-
-
-uvicorn app:app --reload
-
-
-Open in browser:
-
-
-http://127.0.0.1:8000/chat?message=show
- summary
-
-
----
-
-## Example Chatbot Queries
-
-
-show summary of ABC Corp
-analyze opportunity for ABC Corp
-generate email
-generate proposal
-
-
----
-
-## Example Output
-
-Account Summary:
-
-ABC Corp is a technology company interested in AI-based automation solutions with an active opportunity valued at $45,000.
-
-Sales Email:
-
-Subject: Follow-up on AI Platform Implementation
-
-Hi John,
-
-Thank you for discussing ABC Corp's AI platform implementation with us. We believe our solution can significantly improve automation and efficiency for your organization.
-
-Best regards  
-Sales Team
-
----
-
-## Future Enhancements
-
-- ChatGPT-style web UI  
-- PDF proposal generation  
-- Multi-agent AI system  
-- Slack / Teams integration  
-- Sales forecasting model  
-
----
-
-## Author
-
-Sunny
-
-git clone https://github.com/yourusername/sales-ai-chatbot.git
-
-cd sales-ai-chatbot
-
-
----
-
-### 2. Install dependencies
-
-
-pip install simple-salesforce fastapi uvicorn python-dotenv groq
-
-
----
-
-### 3. Create Salesforce Developer Account
-
-Go to:
-
-https://developer.salesforce.com/signup
-
-After signup, note the following credentials:
-
-- Username
-- Password
-- Security Token
-
-To get the token:
-
-Settings → Reset My Security Token
-
----
-
-### 4. Get Groq API Key
-
-Visit:
-
-https://console.groq.com
-
-Create an API key.
-
----
-
-### 5. Configure Environment Variables
-
-Create `.env` file:
-
-
-SF_USERNAME=your_salesforce_username
-SF_PASSWORD=your_salesforce_password
-SF_TOKEN=your_salesforce_token
-
-GROQ_API_KEY=your_groq_api_key
-
-
----
-
-## Running the Chatbot
-
-Start the FastAPI server:
-
-
-uvicorn app:app --reload
-
-
-Open in browser:
-
-
-http://127.0.0.1:8000/chat?message=show
- summary
-
-
----
-
-## Example Chatbot Queries
-
-
-show summary of ABC Corp
-analyze opportunity for ABC Corp
-generate email
-generate proposal
-
-
----
-
-## Example Output
-
-Account Summary:
-
-ABC Corp is a technology company interested in AI-based automation solutions with an active opportunity valued at $45,000.
-
-Sales Email:
-
-Subject: Follow-up on AI Platform Implementation
-
-Hi John,
-
-Thank you for discussing ABC Corp's AI platform implementation with us. We believe our solution can significantly improve automation and efficiency for your organization.
-
-Best regards  
-Sales Team
-
----
-
-## Future Enhancements
-
-- ChatGPT-style web UI  
-- PDF proposal generation  
-- Multi-agent AI system  
-- Slack / Teams integration  
-- Sales forecasting model  
-
----
-
-## Author
-
-Sunny
+Use the generated URL as the Twilio webhook.
